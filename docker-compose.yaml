@@ -34,6 +34,7 @@ services:
     container_name: node
     entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
     command: bash -c "npm install -y && node src/index.js"
+    restart: always
     tty: true
     working_dir: /usr/src/app
     volumes:
